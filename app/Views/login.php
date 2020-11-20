@@ -28,9 +28,10 @@
                         <input type="password" name="password" class="form-control" id="InputForPassword">
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
+                    <a class="btn btn-primary" href="<?php echo base_url('index.php/Register'); ?>">Register</a>
                 </form>
+                
             </div>
-             
         </div>
     </div>
      

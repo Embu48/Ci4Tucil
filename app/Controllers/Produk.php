@@ -7,11 +7,14 @@ class Produk extends BaseController
 {
 	public function index()
 	{
-        $model = new ProdukModel();
-        $data['data'] = $model->getProduk();
-
-        echo view ('produk/index', $data);
-		//return view('welcome_message');
+		$session = session();
+        if($session->get('logged_in')){
+			$model = new ProdukModel();
+			$data['data'] = $model->getProduk();
+			echo view ('produk/index', $data);
+		}else{
+			return redirect()->to('/login');
+		}
 	}
 
 	//--------------------------------------------------------------------

@@ -1,205 +1,83 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Starter Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?= base_url('bootstrap-4.5.3/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Paket</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      <a class="nav-link" href="<?php echo base_url('index.php/Admin'); ?>">Home</a>
+      </li>
+      <li class="nav-item active">
+	  <a class="nav-link" href="#">Barang <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="<?php echo base_url('index.php/About'); ?>">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main role="main" class="container">
+
+  <div class="starter-template">
+    <h1>Bootstrap starter template</h1>
+    <!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Welcome to CodeIgniter 4!</title>
-	<meta name="description" content="The small framework with powerful features">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
-
-	<!-- STYLES -->
-
-	<style {csp-style-nonce}>
-		* {
-			transition: background-color 300ms ease, color 300ms ease;
-		}
-		*:focus {
-			background-color: rgba(221, 72, 20, .2);
-			outline: none;
-		}
-		html, body {
-			color: rgba(33, 37, 41, 1);
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-			font-size: 16px;
-			margin: 0;
-			padding: 0;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			text-rendering: optimizeLegibility;
-		}
-		header {
-			background-color: rgba(247, 248, 249, 1);
-			padding: .4rem 0 0;
-		}
-		.menu {
-			padding: .4rem 2rem;
-		}
-		header ul {
-			border-bottom: 1px solid rgba(242, 242, 242, 1);
-			list-style-type: none;
-			margin: 0;
-			overflow: hidden;
-			padding: 0;
-			text-align: right;
-		}
-		header li {
-			display: inline-block;
-		}
-		header li a {
-			border-radius: 5px;
-			color: rgba(0, 0, 0, .5);
-			display: block;
-			height: 44px;
-			text-decoration: none;
-		}
-		header li.menu-item a {
-			border-radius: 5px;
-			margin: 5px 0;
-			height: 38px;
-			line-height: 36px;
-			padding: .4rem .65rem;
-			text-align: center;
-		}
-		header li.menu-item a:hover,
-		header li.menu-item a:focus {
-			background-color: rgba(221, 72, 20, .2);
-			color: rgba(221, 72, 20, 1);
-		}
-		header .logo {
-			float: left;
-			height: 44px;
-			padding: .4rem .5rem;
-		}
-		header .menu-toggle {
-			display: none;
-			float: right;
-			font-size: 2rem;
-			font-weight: bold;
-		}
-		header .menu-toggle button {
-			background-color: rgba(221, 72, 20, .6);
-			border: none;
-			border-radius: 3px;
-			color: rgba(255, 255, 255, 1);
-			cursor: pointer;
-			font: inherit;
-			font-size: 1.3rem;
-			height: 36px;
-			padding: 0;
-			margin: 11px 0;
-			overflow: visible;
-			width: 40px;
-		}
-		header .menu-toggle button:hover,
-		header .menu-toggle button:focus {
-			background-color: rgba(221, 72, 20, .8);
-			color: rgba(255, 255, 255, .8);
-		}
-		header .heroe {
-			margin: 0 auto;
-			max-width: 1100px;
-			padding: 1rem 1.75rem 1.75rem 1.75rem;
-		}
-		header .heroe h1 {
-			font-size: 2.5rem;
-			font-weight: 500;
-		}
-		header .heroe h2 {
-			font-size: 1.5rem;
-			font-weight: 300;
-		}
-		section {
-			margin: 0 auto;
-			max-width: 1100px;
-			padding: 2.5rem 1.75rem 3.5rem 1.75rem;
-		}
-		section h1 {
-			margin-bottom: 2.5rem;
-		}
-		section h2 {
-			font-size: 120%;
-			line-height: 2.5rem;
-			padding-top: 1.5rem;
-		}
-		section pre {
-			background-color: rgba(247, 248, 249, 1);
-			border: 1px solid rgba(242, 242, 242, 1);
-			display: block;
-			font-size: .9rem;
-			margin: 2rem 0;
-			padding: 1rem 1.5rem;
-			white-space: pre-wrap;
-			word-break: break-all;
-		}
-		section code {
-			display: block;
-		}
-		section a {
-			color: rgba(221, 72, 20, 1);
-		}
-		section svg {
-			margin-bottom: -5px;
-			margin-right: 5px;
-			width: 25px;
-		}
-		.further {
-			background-color: rgba(247, 248, 249, 1);
-			border-bottom: 1px solid rgba(242, 242, 242, 1);
-			border-top: 1px solid rgba(242, 242, 242, 1);
-		}
-		.further h2:first-of-type {
-			padding-top: 0;
-		}
-		footer {
-			background-color: rgba(221, 72, 20, .8);
-			text-align: center;
-		}
-		footer .environment {
-			color: rgba(255, 255, 255, 1);
-			padding: 2rem 1.75rem;
-		}
-		footer .copyrights {
-			background-color: rgba(62, 62, 62, 1);
-			color: rgba(200, 200, 200, 1);
-			padding: .25rem 1.75rem;
-		}
-		@media (max-width: 559px) {
-			header ul {
-				padding: 0;
-			}
-			header .menu-toggle {
-				padding: 0 1rem;
-			}
-			header .menu-item {
-				background-color: rgba(244, 245, 246, 1);
-				border-top: 1px solid rgba(242, 242, 242, 1);
-				margin: 0 15px;
-				width: calc(100% - 30px);
-			}
-			header .menu-toggle {
-				display: block;
-			}
-			header .hidden {
-				display: none;
-			}
-			header li.menu-item a {
-				background-color: rgba(221, 72, 20, .1);
-			}
-			header li.menu-item a:hover,
-			header li.menu-item a:focus {
-				background-color: rgba(221, 72, 20, .7);
-				color: rgba(255, 255, 255, .8);
-			}
-		}
-	</style>
+    <title>Admin</title>
 </head>
 <body>
-
-
-
-<section>
-        <h1> READ DATA</h1>
-
+	<section>
+		<h1><u>LIST PAKET</u></h1>
+		<br>
         <table border='1'>
             <thread>
                 <th>Nama Produk</th>
@@ -212,43 +90,16 @@
                 <tr>
                     <td><?php echo $keluar['nama_produk']; ?></td>
                     <td><?php echo $keluar['deskripsi_produk']; ?></td>
-                </tr>
+				</tr>
                     <?php } ?>
             </tbody>
         </table>
-</section>
-
-<footer>
-	<div class="environment">
-
-		<p>Page rendered in {elapsed_time} seconds</p>
-
-		<p>Environment: <?= ENVIRONMENT ?></p>
-
-	</div>
-
-	<div class="copyrights">
-
-		<p>&copy; <?= date('Y') ?> CodeIgniter Foundation. CodeIgniter is open source project released under the MIT
-			open source licence.</p>
-
-	</div>
-
-</footer>
-
-<!-- SCRIPTS -->
-
-<script>
-	function toggleMenu() {
-		var menuItems = document.getElementsByClassName('menu-item');
-		for (var i = 0; i < menuItems.length; i++) {
-			var menuItem = menuItems[i];
-			menuItem.classList.toggle("hidden");
-		}
-	}
-</script>
-
-<!-- -->
-
+	</section>
 </body>
+</html>
+  </div>
+
+</main><!-- /.container -->
+<script src="<?= base_url('bootstrap-4.5.3/js/bootstrap.min.js') ?>"></script>
+    <script src="<?= base_url('jquery-3.5.1.min.js') ?>"></script>
 </html>

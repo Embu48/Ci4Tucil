@@ -7,10 +7,15 @@ class Login extends Controller
 {
     public function index()
     {
-        helper(['form']);
-        echo view('login');
-    } 
- 
+        $session = session();
+        if($session->get('logged_in')){
+            return redirect()->to('/admin');
+        }else{
+            helper(['form']);
+            echo view('login');
+        }
+    }   
+   
     public function auth()
     {
         $session = session();
@@ -29,7 +34,7 @@ class Login extends Controller
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/dashboard');
+                return redirect()->to('/admin');
             }else{
                 $session->setFlashdata('msg', 'Wrong Password');
                 return redirect()->to('/login');
@@ -38,12 +43,5 @@ class Login extends Controller
             $session->setFlashdata('msg', 'Email not Found');
             return redirect()->to('/login');
         }
-    }
- 
-    public function logout()
-    {
-        $session = session();
-        $session->destroy();
-        return redirect()->to('/login');
     }
 } 

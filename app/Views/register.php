@@ -36,6 +36,7 @@
                         <input type="password" name="confpassword" class="form-control" id="InputForConfPassword">
                     </div>
                     <button type="submit" class="btn btn-primary">Register</button>
+                    <a class="btn btn-primary" href="<?php echo base_url('index.php/Login'); ?>">Sudah ada akun? Login aja</a>
                 </form>
             </div>
              
