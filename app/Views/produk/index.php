@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Starter Template · Bootstrap</title>
+    <title>Barang</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
 
@@ -76,20 +76,22 @@
 </head>
 <body>
 	<section>
-		<h1><u>LIST PAKET</u></h1>
+		<h1><u>List Paket</u></h1>
 		<br>
         <table border='1'>
             <thread>
-                <th>Nama Produk</th>
-                <th>Deskripsi Produk</th>
+                <th>Nama Barang</th>
+				<th>Kota Tujuan</th>
+				<th>Kode Pos</th>
             </thread>
             <tbody>
                 <?php
                     foreach($data as $key => $keluar){
                 ?>
                 <tr>
-                    <td><?php echo $keluar['nama_produk']; ?></td>
-                    <td><?php echo $keluar['deskripsi_produk']; ?></td>
+                    <td><?php echo $keluar['nama_barang']; ?></td>
+					<td><?php echo $keluar['alamat_tujuan']; ?></td>
+					<td><?php echo $keluar['kode_pos']; ?></td>
 				</tr>
                     <?php } ?>
             </tbody>
