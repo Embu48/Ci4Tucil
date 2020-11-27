@@ -12,7 +12,9 @@ class Login extends Controller
             return redirect()->to('/admin');
         }else{
             helper(['form']);
-            echo view('login');
+            echo view("Pre/header");
+	        echo view("Pre/login");
+	        echo view("Pre/footer");
         }
     }   
    

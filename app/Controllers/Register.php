@@ -7,10 +7,16 @@ class Register extends Controller
 {
     public function index()
     {
-        //include helper form
-        helper(['form']);
-        $data = [];
-        echo view('register', $data);
+        $session = session();
+        if($session->get('logged_in')){
+            return redirect()->to('/admin');
+        }else{
+            helper(['form']);
+            $data = [];
+            echo view("Pre/header");
+            echo view('Pre/register', $data);
+            echo view("Pre/footer");
+        } 
     }
  
     public function save()

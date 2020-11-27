@@ -8,7 +8,9 @@ class Admin extends Controller
     {
         $session = session();
         if($session->get('logged_in')){
-            echo view('admin');
+            echo view("Admin/header");
+	        echo view("Admin/admin");
+	        echo view("Admin/footer");
         //echo "Welcome back, ".$session->get('user_name');
         }else{
             return redirect()->to('/login');

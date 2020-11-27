@@ -8,9 +8,14 @@ class About extends Controller
     {
         $session = session();
         if($session->get('logged_in')){
-            echo view('about');
+            echo view("Admin/header");
+            echo view("Admin/about");
+            echo view("Admin/footer");
+        //echo "Welcome back, ".$session->get('user_name');
         }else{
-            return redirect()->to('/login');
+            echo view("Pre/header");
+            echo view("Admin/about");
+            echo view("Pre/footer");
         }
     }
 }
