@@ -1,20 +1,7 @@
-<?php
-namespace App\Models;
-
+<?php namespace App\Models;
+ 
 use CodeIgniter\Model;
-
 class ProdukModel extends Model{
-    protected $table = "produk";
-    public function getProduk($id = false){
-        if($id == false){
-            return $this->table('produk')
-            ->get()
-            ->getResultArray();
-        }else {
-            return $this->table('produk')
-            ->where('id', $id)
-            ->get()
-            ->getRowArray();
-        }
-    }
+    protected $table = 'produk';
+    protected $allowedFields = ['nama_barang','alamat_tujuan','kode_pos','created_at'];
 }

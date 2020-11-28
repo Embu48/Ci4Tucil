@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use App\Models\ProdukListModel;
 use App\Models\ProdukModel;
 
 class Produk extends BaseController
@@ -9,7 +10,7 @@ class Produk extends BaseController
 	{
 		$session = session();
         if($session->get('logged_in')){
-			$model = new ProdukModel();
+			$model = new ProdukListModel();
 			$data['data'] = $model->getProduk();
 			echo view("Admin/header");
 			echo view('admin/barang', $data);
@@ -19,12 +20,18 @@ class Produk extends BaseController
 		}
 	}
 	public function tambah($nama, $kota, $pos){
-		$data['nama_barang'] = $nama;
-		$data['kota_tujuan'] = $kota;
-		$data['kode_pos'] = $pos;
-		//$this->db->table('produk')->insert($data);
-		$this->db->query("INSERT INTO produk (nama_barang, kota_tujuan, kode_pos) VALUES(:nama:, :kota:, :pos:)",$data);
-		//return redirect()->to('/barang');
-
+		$session = session();
+		if($session->get('logged_in')){
+			$model = new ProdukModel();
+            $data = [
+                'nama_barang'   => $nama,
+                'alamat_tujuan' => $kota,
+                'kode_pos' => $pos
+            ];
+            $model->save($data);
+            return redirect()->to('/produk');
+		}else{
+			return redirect()->to('/login');
+		}
 	}
 }
