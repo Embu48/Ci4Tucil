@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <title>Login</title>
+    <title>Retail ABC - Login</title>
     <style>
 * {box-sizing: border-box;}
 
@@ -64,7 +64,7 @@ body {
 </head>
 <body>
 <div class="header">
-  <a href="#default" class="logo">PAKET</a>
+  <a href="#default" class="logo">RETAIL OBAT ABC</a>
   <div class="header-right">
     <a href="<?php echo base_url('index.php/Login'); ?>">Login</a>
     <a href="<?php echo base_url('index.php/Register'); ?>">Register</a>

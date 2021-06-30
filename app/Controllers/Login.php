@@ -8,13 +8,16 @@ class Login extends Controller
     public function index()
     {
         $session = session();
-        if($session->get('logged_in')){
+        if($session->get('admin_in')){
             return redirect()->to('/admin');
+        }
+        else if($session->get('user_in')){
+            return redirect()->to('/user');
         }else{
             helper(['form']);
-            echo view("Pre/header");
-	        echo view("Pre/login");
-	        echo view("Pre/footer");
+            //echo view("Pre/header");
+	        echo view("Pre/login-2");
+	        //echo view("Pre/footer");
         }
     }   
    
@@ -24,19 +27,31 @@ class Login extends Controller
         $model = new UserModel();
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
-        $data = $model->where('user_email', $email)->first();
+        $data = $model->where('email', $email)->first();
         if($data){
-            $pass = $data['user_password'];
+            $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
             if($verify_pass){
-                $ses_data = [
-                    'user_id'       => $data['user_id'],
-                    'user_name'     => $data['user_name'],
-                    'user_email'    => $data['user_email'],
-                    'logged_in'     => TRUE
-                ];
-                $session->set($ses_data);
-                return redirect()->to('/admin');
+                if($data['role'] == 'admin'){
+                    $ses_data = [
+                        'id'       => $data['id'],
+                        'name'     => $data['name'],
+                        'email'    => $data['email'],
+                        'admin_in'     => TRUE
+                    ];
+                    $session->set($ses_data);
+                    return redirect()->to('/admin');
+                }else{
+                    $ses_data = [
+                        'id'       => $data['id'],
+                        'name'     => $data['name'],
+                        'email'    => $data['email'],
+                        'user_in'     => TRUE
+                    ];
+                    $session->set($ses_data);
+                    return redirect()->to('/user');
+                }
+                
             }else{
                 $session->setFlashdata('msg', 'Wrong Password');
                 return redirect()->to('/login');

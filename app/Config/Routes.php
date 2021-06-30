@@ -32,9 +32,11 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Login::index');
 $routes->get('/dashboard', 'Admin::index');
-$routes->get('/tentang', 'About::index');
-$routes->get('/list', 'Produk::index');
-$routes->get('/tambah/(:any)/(:any)/(:num)', 'Produk::tambah/$1/$2/$3');
+$routes->get('/penjualan', 'Penjualan::index');
+$routes->get('/gudang', 'Embu::index');
+$routes->get('/tambah/(:any)/(:num)', 'Embu::tambah/$1/$2');
+
+$routes->get('/pesanan', 'Pesanan::index');
 
 /**
  * --------------------------------------------------------------------

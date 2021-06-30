@@ -11,8 +11,8 @@
 </style>
 
 <div class="footer">
-  Data Pengiriman Paket
-  <br>@2020 All Rights Reserved
+  PSB Online
+  <br>@2021 All Rights Reserved
 </div>
 </body>
 </html>

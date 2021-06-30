@@ -63,10 +63,10 @@ body {
 </head>
 <body>
 <div class="header">
-  <a href="#default" class="logo">PAKET</a>
+  <a href="#default" class="logo">RETAIL OBAT ABC [ADMIN]</a>
   <div class="header-right">
-    <a href="<?php echo base_url('index.php/Admin'); ?>">Admin</a>
-    <a href="<?php echo base_url('index.php/Produk'); ?>">Barang</a>
-    <a href="<?php echo base_url('index.php/About'); ?>">About</a>
+    <a href="<?php echo base_url('Admin'); ?>">Admin</a>
+    <a href="<?php echo base_url('Produk'); ?>">Stok</a>
+    <a href="<?php echo base_url('Admin/logout'); ?>">Logout</a>
   </div>
 </div>
